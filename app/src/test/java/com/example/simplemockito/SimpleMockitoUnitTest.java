@@ -2,6 +2,8 @@ package com.example.simplemockito;
 
 import android.content.Context;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -19,16 +21,28 @@ public class SimpleMockitoUnitTest {
 
     private static final String FAKE_STRING = "Hello World";
 
+    private SimpleClass mSimpleClass;
+
     @Mock
     Context mMockContext;
 
-    @Test
-    public void simpleClass_returnsString() {
+    @Before
+    public void init_classes() {
         when(mMockContext.getString(R.string.hello_word)).thenReturn(FAKE_STRING + " a ");
 
-        SimpleClass myObjectUnderTest = new SimpleClass(mMockContext);
-        String result = myObjectUnderTest.getHelloWorldString();
+        mSimpleClass = new SimpleClass(mMockContext);
+    }
+
+
+    @Test
+    public void simpleClass_returnsString() {
+        String result = mSimpleClass.getHelloWorldString();
 
         assertThat(result, is(FAKE_STRING));
+    }
+
+    @After
+    public void clear_classes(){
+        System.out.println("After test");
     }
 }
