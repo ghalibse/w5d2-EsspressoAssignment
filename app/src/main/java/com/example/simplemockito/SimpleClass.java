@@ -14,6 +14,6 @@ public class SimpleClass {
     }
 
     public String getHelloWorldString() {
-        return mContext.getString(R.string.hello_word) + "b";
+        return mContext.getString(R.string.hello_word);
     }
 }
