@@ -19,6 +19,6 @@
         android:id="@+id/a_main_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="doReverse"
-        android:text="Reverse Name" />
+        android:onClick="doMagic"
+        android:text="PRESS TO REVERSE" />
 </LinearLayout>

@@ -10,6 +10,6 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void testReverseString_isCorrect() throws Exception {
-        assertEquals("kobra", new ReverseString().doReverseString("arbok"));
+        assertEquals("kobra", new ReverseHelper().doReverse("arbok"));
     }
 }

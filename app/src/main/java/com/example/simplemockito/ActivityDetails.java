@@ -8,13 +8,15 @@ import android.widget.TextView;
 
 public class ActivityDetails extends AppCompatActivity {
 
+    private TextView mTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity_details);
-        Intent intent = getIntent();
-        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-        TextView textView = (TextView) findViewById(R.id.some_text);
-        textView.setText(message);
+
+        String aString = getIntent().getStringExtra(Intent.EXTRA_TEXT);
+        mTextView = (TextView) findViewById(R.id.some_text);
+        mTextView.setText(aString);
     }
 }

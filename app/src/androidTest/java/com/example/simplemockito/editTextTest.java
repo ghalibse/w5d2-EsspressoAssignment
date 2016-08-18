@@ -1,11 +1,8 @@
 package com.example.simplemockito;
-import android.support.test.espresso.contrib.RecyclerViewActions;
 import android.support.test.rule.ActivityTestRule;
-import android.support.test.runner.AndroidJUnit4;
 
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
@@ -23,12 +20,12 @@ public class editTextTest {
     @Test
     public void testRecyclerClick() {
         onView(withId(R.id.a_main_edittext))
-                .perform( typeText("ekans") );
+                .perform( typeText("niwdE") );
 
         onView(withId(R.id.a_main_btn))
                 .perform(click());
 
         onView(withId(R.id.some_text))
-                .check(matches(withText("snake")));
+                .check(matches(withText("Edwin")));
     }
 }

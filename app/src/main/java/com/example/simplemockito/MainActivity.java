@@ -8,20 +8,24 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String EXTRA_MESSAGE = "reverse";
+    private EditText mEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mEditText = (EditText) findViewById(R.id.a_main_edittext);
     }
 
-    public void doReverse(View view) {
+    public void doMagic(View view) {
+
+
+        String str = mEditText.getText().toString();
+        ReverseHelper reverseHelper = new ReverseHelper();
+
         Intent intent = new Intent(this, ActivityDetails.class);
-        EditText editText = (EditText) findViewById(R.id.a_main_edittext);
-        String message = editText.getText().toString();
-        ReverseString reverseString = new ReverseString();
-        intent.putExtra(EXTRA_MESSAGE, reverseString.doReverseString(message));
+        intent.putExtra(Intent.EXTRA_TEXT, reverseHelper.doReverse(str));
         startActivity(intent);
     }
 }
